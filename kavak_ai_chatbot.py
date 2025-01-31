@@ -1,9 +1,12 @@
 import openai
 import streamlit as st
 
+# Ensure you have an API key set up
+openai.api_key = st.secrets["openai_api_key"]  # Store your API key securely in Streamlit secrets
+
 def kavak_chatbot(prompt):
     response = openai.ChatCompletion.create(
-        model="gpt-4",  # Using GPT-4 for better reasoning & context handling
+        model="gpt-4",  # Use "gpt-4-turbo" for lower cost
         messages=[
             {"role": "system", "content": "You are Kavak's AI Assistant, specialized in car valuation, auction listing, and internal process support."},
             {"role": "user", "content": prompt}
