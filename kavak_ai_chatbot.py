@@ -6,7 +6,7 @@ openai_client = openai.OpenAI(api_key=st.secrets["openai_api_key"])
 
 def kavak_chatbot(prompt):
     response = openai_client.chat.completions.create(
-        model="gpt-4",  # Use "gpt-4-turbo" for lower cost
+        model="gpt-4o",  # Use "gpt-4-turbo" for lower cost
         messages=[
             {"role": "system", "content": "You are Kavak's AI Assistant, specialized in car valuation, auction listing, and internal process support."},
             {"role": "user", "content": prompt}
